@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPCH 101 - Enhanced Canvas Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #1f2937;
+      background: #f9fafb;
+      transition: background 0.5s, color 0.5s;
+    }
+    [data-theme="dark"] {
+      background: #1f2937;
+      color: #f9fafb;
+    }
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .typed-text {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2563eb;
+    }
+    .enhanceable_content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .enhanceable_content a {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid #1f2937;
+      color: #1f2937;
+      background: #fff;
+      box-shadow: 6px 6px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background 0.3s;
+    }
+    .enhanceable_content a:hover {
+      transform: scale(1.05);
+      background: #f3f4f6;
+    }
+    .tab-section {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 20px;
+      display: none;
+    }
+    .tab-section.active {
+      display: block;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0; left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="typed-text" id="typed-output"></div>
+  </header>
+
+  <div class="enhanceable_content">
+    <a href="#tab-1" onclick="showTab('tab-1')"><img class="icon" src="https://www.svgrepo.com/show/414630/welcome-hand.svg" alt="Welcome" />Welcome</a>
+    <a href="#tab-2" onclick="showTab('tab-2')"><img class="icon" src="https://www.svgrepo.com/show/452151/notebook-2.svg" alt="Course Info" />Course Info</a>
+    <a href="#tab-3" onclick="showTab('tab-3')"><img class="icon" src="https://www.svgrepo.com/show/512327/chatting-dots.svg" alt="Policy" />Comm Policy</a>
+    <a href="#tab-4" onclick="showTab('tab-4')"><img class="icon" src="https://www.svgrepo.com/show/529212/lightbulb-outline.svg" alt="SLOs" />SLOs</a>
+  </div>
+
+  <div class="tab-section" id="tab-1">
+    <h2>Welcome</h2>
+    <p>Welcome to SPCH 101 — Public Speaking! 🎤 Let's build skills, boost confidence, and have fun while doing it. Get ready to explore voice, expression, and impact!</p>
+  </div>
+  <div class="tab-section" id="tab-2">
+    <h2>Course Info</h2>
+    <p>Meeting times, textbook details, instructor contact, and more—everything you need to stay on track.</p>
+  </div>
+  <div class="tab-section" id="tab-3">
+    <h2>Communication Policy</h2>
+    <p>I respond to Canvas messages within 48 hours Monday–Thursday. Respect and professionalism are key.</p>
+  </div>
+  <div class="tab-section" id="tab-4">
+    <h2>Student Learning Outcomes</h2>
+    <p>By the end of this course, you’ll be able to deliver structured, confident, and compelling speeches with purpose.</p>
+  </div>
+
+  <script>
+    // Typed effect
+    new Typed("#typed-output", {
+      strings: ["Welcome to SPCH 101!", "Speak. Connect. Inspire.", "Let's build your voice together."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    // Tab toggling
+    function showTab(id) {
+      document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_7e6703d983.mp3?filename=click-124467.mp3').play();
+    }
+
+    // Particle background
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#1e3a8a" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#1e3a8a",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    // Auto dark mode based on system setting
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</body>
+</html>
