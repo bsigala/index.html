@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   SPCH 101 - Canvas Homepage
+  </title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 20px;
+      color: #1f2937;
+    }
+    .enhanceable_content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+    .enhanceable_content ul {
+      list-style: none;
+      padding-left: 0;
+      display: contents;
+    }
+    .tab-button {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #34495e;
+      color: #34495e;
+      box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease-in-out;
+    }
+    .tab-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+      background-color: #f1f5f9 !important;
+      color: #000000 !important;
+    }
+    h3 {
+      margin: 0;
+    }
+    .tab-section {
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+    .tab-section h2 {
+      text-align: center;
+    }
+    .tab-section p {
+      line-height: 1.6;
+    }
+    iframe, img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  </style>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) {
+      document.body.style.backgroundColor = "#111827";
+      document.body.style.color = "#f9fafb";
+      document.querySelectorAll('.tab-button').forEach(el => {
+        el.style.borderColor = '#f9fafb';
+        el.style.color = '#f9fafb';
+      });
+    }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
+  </script>
+  <div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:-1;">
+  </div>
+  <script>
+   particlesJS("particles-js", {
+    "particles": {
+      "number": {"value": 50},
+      "color": {"value": "#60a5fa"},
+      "shape": {"type": "circle"},
+      "opacity": {"value": 0.6},
+      "size": {"value": 3},
+      "line_linked": {"enable": true, "distance": 150, "color": "#60a5fa", "opacity": 0.4, "width": 1},
+      "move": {"enable": true, "speed": 2}
+    }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    new Typed("#headline", {
+      strings: ["Welcome to SPCH 101", "Master Public Speaking", "Engage. Inspire. Speak Boldly."],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true
+    });
+  });
+  </script>
+ </head>
+ <body>
+  <h1 id="headline" style="text-align:center;margin-top:30px;font-size:2em;">
+   Welcome to SPCH 101
+  </h1>
+  <button onclick="toggleDarkMode()" style="margin: 10px auto; display: block; padding: 8px 16px; border-radius: 8px; background-color: #1e3a8a; color: #fff; border: none; cursor: pointer;">
+   Toggle Dark Mode
+  </button>
+  <script>
+   function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+  </script>
+  <style>
+   .dark-mode {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+.dark-mode a.tab-button {
+  color: #f9fafb !important;
+  border-color: #f9fafb !important;
+}
+  </style>
+  <div class="enhanceable_content tabs">
+   <ul>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-1" role="tab" style="background-color: #dbeafe;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Welcome
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-2" role="tab" style="background-color: #fef3c7;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Course Info
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-3" role="tab" style="background-color: #dcfce7;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Comm Policy
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-4" role="tab" style="background-color: #fce7f3;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       SLOs
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-5" role="tab" style="background-color: #e0f2fe;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Materials
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-6" role="tab" style="background-color: #ede9fe;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Expectations
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-7" role="tab" style="background-color: #fff1f2;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Equity
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-8" role="tab" style="background-color: #fee2e2;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Integrity
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-9" role="tab" style="background-color: #e0f2f1;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Resources
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-10" role="tab" style="background-color: #f3f4f6;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Grading
+      </a>
+     </h3>
+    </li>
+    <li>
+     <h3>
+      <a class="tab-button" href="#tab-11" role="tab" style="background-color: #ede9e8;">
+       <svg fill="none" height="18" stroke="#1e3a8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+        <circle cx="12" cy="12" r="10">
+         <animate attributename="r" dur="1.2s" repeatcount="indefinite" values="10;12;10">
+         </animate>
+        </circle>
+       </svg>
+       Assignments
+      </a>
+     </h3>
+    </li>
+   </ul>
+  </div>
+  <!-- Particle.js Background -->
+  <div id="particles-js" style="position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%;">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
+  </script>
+  <script>
+   particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 40 },
+      "size": { "value": 3 },
+      "color": { "value": "#1e3a8a" },
+      "line_linked": { "enable": true, "distance": 150, "color": "#1e3a8a", "opacity": 0.4, "width": 1 },
+      "move": { "speed": 3 }
+    }
+  });
+  </script>
+  <!-- Typed.js Animated Headline -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    var typed = new Typed("#typed-headline", {
+      strings: ["Welcome to SPCH 101", "Master Public Speaking", "Find Your Voice at Rio Hondo"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  });
+  </script>
+  <!-- Collapsible Sections -->
+  <script>
+   document.querySelectorAll('.tab-section').forEach(section => {
+    const header = section.querySelector('h2');
+    if (header) {
+      const toggle = document.createElement('button');
+      toggle.textContent = "▼";
+      toggle.style.cssText = "margin-left: 10px; font-size: 0.7em;";
+      toggle.onclick = () => {
+        const isOpen = section.classList.toggle('collapsed');
+        section.querySelectorAll('p, ol, ul, table, img, div:not(:first-child)').forEach(el => {
+          el.style.display = isOpen ? 'none' : '';
+        });
+        toggle.textContent = isOpen ? "▶" : "▼";
+      };
+      header.appendChild(toggle);
+    }
+  });
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    if (typeof Typed !== 'undefined') {
+      new Typed("#typed-headline", {
+        strings: ["Welcome to SPCH 101", "Speak with Confidence", "Discover Your Voice"],
+        typeSpeed: 70,
+        backSpeed: 40,
+        loop: true
+      });
+    }
+  });
+  </script>
+ </body>
+</html>
